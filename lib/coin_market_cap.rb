@@ -24,7 +24,7 @@ class CoinMarketCap
   end  
 
   def self.query
-    { 'limit' => PAGE_SIZE }
+    { 'limit' => PAGE_SIZE, 'sort' => "market_cap", 'sort_dir' => "desc" }
   end  
 
   def self.headers

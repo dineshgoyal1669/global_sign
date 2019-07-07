@@ -12,8 +12,8 @@
         <td><%= crypto["cmc_rank"] %></td>
         <td><%= crypto["symbol"] %></td>
         <td><%= crypto["name"] %></td>
-        <td><%= crypto["quote"]["USD"]["market_cap"] %></td>
-        <td><%= crypto["quote"]["USD"]["price"] %></td>
+        <td><%= number_to_currency(crypto["quote"]["USD"]["market_cap"]) %></td>
+        <td><%= number_to_currency(crypto["quote"]["USD"]["price"]) %></td>
       </tr>
     <% end %>
   </table>
