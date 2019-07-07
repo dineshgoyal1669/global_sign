@@ -1,0 +1,22 @@
+<% if @list[:data].present? %>
+  <table class="table table-striped">
+    <tr>
+      <th>#</th>
+      <th>Currency Code</th>
+      <th>Currency Name</th>
+      <th>Market Cap</th>
+      <th>Value (in USD)</th>
+    </tr>
+    <% @list[:data].each do |crypto| %>
+      <tr>
+        <td><%= crypto["cmc_rank"] %></td>
+        <td><%= crypto["symbol"] %></td>
+        <td><%= crypto["name"] %></td>
+        <td><%= crypto["quote"]["USD"]["market_cap"] %></td>
+        <td><%= crypto["quote"]["USD"]["price"] %></td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <div><%= @list[:error_msg] %></div>
+<% end %>
